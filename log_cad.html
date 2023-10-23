@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login e Cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .form input[type="text"],
+        .form input[type="password"],
+        .form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form input[type="submit"] {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .form input[type="submit"]:hover {
+            background: #555;
+        }
+
+        .toggle-form {
+            margin-top: 20px;
+        }
+
+        .toggle-form a {
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Página de Login e Cadastro</h1>
+        <div class="form">
+            <h2>Login</h2>
+            <form action="logar.php" method="post">
+                <input type="text" name="email" placeholder="Usuário" required>
+                <input type="password" name="senha" placeholder="Senha" required>
+                <input type="submit" value="Entrar">
+            </form>
+        </div>
+        <div class="toggle-form">
+            <a href="#cadastro">Criar uma conta</a>
+        </div>
+        <div class="form" id="cadastro">
+            <h2>Cadastro</h2>
+            <form action="cadastrar.php" method="post">
+                <input type="text" name="nome" placeholder="Novo Usuário" required>
+                <input type="password" name="senha" placeholder="Nova Senha" required>
+                <input type="email" name="email" placeholder="Endereço de E-mail" required>
+                <input type="submit" value="Cadastrar">
+            </form>
+        </div>
+        <div class="toggle-form">
+            <a href="#">Já tem uma conta? Faça login</a>
+        </div>
+    </div>
+</body>
+</html>

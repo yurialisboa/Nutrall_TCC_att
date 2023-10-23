@@ -1,0 +1,669 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto+Mono:wght@100;200;300;400;500;600&family=Roboto+Slab:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Poppins:wght@300;400&family=Roboto&display=swap');
+
+* {
+    border: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    background: #dfe9f5;
+}
+
+.nav-vertical {
+    background: #ffffff;
+    bottom: 0;
+    box-shadow: 1px 0 0 rgba(22, 8, 45, .1);
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transition: width 0.2s linear;
+    width: 90px;
+    z-index: 3;
+}
+
+.nav-vertical .logo {
+    display: flex;
+    margin: 10px 0 0 10px;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.nav-vertical .logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.nav-vertical .logo span {
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 19px;
+}
+
+.nav-vertical a {
+    position: relative;
+    color: rgb(85, 83, 83);
+    font-size: 15px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+}
+
+.nav-vertical .fas {
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.nav-vertical .nav-item {
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+}
+
+.nav-vertical .logo:hover {
+    background: fixed;
+}
+
+.nav-vertical a:hover {
+    background: #eee;
+}
+
+.nav-vertical:hover {
+    width: 250px;
+    transition: all 0.5 ease;
+}
+
+.nav-vertical .logout {
+    position: absolute;
+    bottom: 0;
+    transition: 0.2s ease;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.nav-vertical .logout:hover {
+    color: #08e342;
+    background: #fff;
+}
+
+.tela {
+    width: 100%;
+    display: flex;
+}
+
+.tela1 {
+    padding-top: 25px;
+    padding-left: 115px;
+    width: 65%;
+}
+
+.tela2 {
+    padding-top: 25px;    
+    padding-left: 17px;
+    padding-right: 10px;
+    width: 35%;
+}
+
+.clientes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, .1);
+    background-color: #fff;
+    padding: none;
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.bloco-cliente-titulo {
+    width: 100%;
+    text-align: left;
+    padding: 20px 20px 15px;
+}
+
+.sub-titulo {
+    font-size: 0.8rem;
+    color: #979797;
+}
+
+.bloco-cliente {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pesquisa1 {
+    display: flex;
+    justify-content: center;
+    width: 98.8%;
+}
+
+.pesquisa {
+    width: 100%;
+    padding-left: 19px;
+    border: 1px solid #16082d31;
+}
+
+.pesquisa input {
+    width: 100%;
+    box-sizing: border-box;
+}
+.pesquisa input:focus {
+    outline: none;
+}
+
+.pesquisa input::placeholder {
+    color: #5f5f5f94;
+    box-sizing: border-box;
+}
+
+.testimonial-box-container {
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.testimonial-box {
+    width: 48.5%;
+    height: 102px;
+    border: 1px solid #16082d31;
+    background-color: #fff;
+    display: flex;
+    padding: none;
+    margin: 5px 5px;
+    cursor: pointer;
+}
+
+.testimonial-box:hover {
+    color: #2de6ae;
+    border: 1px solid #2de6ae;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile-img1 {
+    width: 80px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.profile-img1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.name-user {
+    display: flex;
+    flex-direction: column;
+}
+
+.name-user p {
+    color: #000000;
+    font-size: 1.1rem;
+}
+
+.name-user span {
+    color: #979797;
+    font-size: 0.9rem;
+}
+
+.reviews {
+    color: #f9d71c;
+}
+
+.box-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.name-user p {
+    font-size: 0.8rem;
+}
+
+.testimonial-box1 {
+    width: 48.5%;
+    height: 102px;
+    border: 1px solid #16082d31;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 5px;
+    cursor: pointer;
+}
+
+.testimonial-box1:hover {
+    color: #2de6ae;
+    border: 1px solid #2de6ae;
+}
+
+.new-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-name-user {
+    padding: 10px;
+    font-size: 25px;
+}
+
+.new-name-user strong {
+    font-size: 20px;
+}
+
+/* Estilos para o formulário */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.prontuario .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro */
+}
+
+.prontuario .conteudo-modal {
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Outros estilos conforme necessário */
+
+.prontuario h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.prontuario #telefone,
+.prontuario #email {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.prontuario form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.prontuario .coiso {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.prontuario label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+.prontuario input #imagem {
+    color: #0056b3;
+}
+
+.prontuario input[type="text"],
+.prontuario input[type="date"],
+.prontuario select,
+.prontuario textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.prontuario input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.prontuario input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+.header {
+    background: #fff;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between; /* Alteração para distribuir os elementos */
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 1px 0 rgba(22, 8, 45, .1);
+    height: 75px;
+}
+
+.navegar1 {
+    display: flex;
+    width: 50%;
+    justify-content: flex-end; /* Ajuste para a esquerda */
+}
+
+.navegar2 {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.nome-colsutorio {
+    text-align: center; /* Centralizar o título "Consultório Online" */
+}
+
+
+.caixa {
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+    cursor: pointer;
+}
+
+.user-pic {
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 0px;
+    height: 50px;
+    margin: 0;
+}
+
+.name {
+    padding-right: 8px;
+    padding-left: 8px;
+    font-weight: 700;
+}
+
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    font-weight: bolder;
+}
+
+.header ul {
+    width: 100%;
+    text-align: right;
+}
+
+.header ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+.header ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sub-menu-wrap {
+    position: absolute;
+    top: 90%;
+    right: 2%;
+    width: 320px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.sub-menu-wrap.open-menu {
+    max-height: 400px;
+   
+}
+
+.sub-menu {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+    border: 1px solid #32303531;
+    border-radius: 3px;
+   
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info h3 {
+    font-weight: 500;
+}
+
+.user-info img {
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.sub-menu hr {
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: #ccc;
+    margin: 15px 0 10px;
+}
+
+.sub-menu-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #525252;
+    margin: 12px 0;
+}
+
+.sub-menu-link p {
+    width: 100%;
+    margin-left: 3px;
+}
+
+#desenho {
+    padding: 10px;
+    background: #e5e5e5;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.sub-menu-link span {
+    font-size: 22px;
+}
+
+.sub-menu-link:hover span {
+    transform: translateX(5px);
+}
+
+.sub-menu-link:hover p {
+    font-weight: 600;
+}
+.sub-menu-link:hover i {
+    font-size: 18px;
+}
+
+.filtrar {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, .1);
+    border-radius: 5px;
+    padding: 15px;
+    
+}
+
+.filtrar-titulo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.sub-titulo {
+    font-size: 0.8rem;
+    color: #979797;
+}
+
+.filtrar-escolha select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.filtrar9{
+    width: 100%;
+    
+    background-color: #fff;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, .1);
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+#myChart{
+
+    width: 100px;
+    height: 100px;
+}
+
+
+
+
+
+/* Responsividade */
+@media screen and (max-width: 1200px) {
+    /* Adicione a classe .nav-vertical uma margem esquerda negativa igual à sua largura */
+    .nav-vertical {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        background: #ffffff;
+        width: 90px; /* Largura da nav-vertical */
+        overflow: hidden;
+        transition: width 0.2s linear;
+        box-shadow: 1px 0 0 rgba(22, 8, 45, .1);
+        z-index: 3;
+        margin-left: 0; /* Defina a margem esquerda para 0 */
+    }
+    
+    /* Quando a nav-vertical estiver expandida, ajuste a largura para acomodar o conteúdo */
+    .nav-vertical:hover {
+        width: 250px; /* Largura expandida da nav-vertical */
+    }
+    
+    /* Aplique margem ao conteúdo principal para evitar sobreposição */
+    .tela {
+        margin-left: 90px; /* Largura da nav-vertical */
+        transition: margin-left 0.5s ease; /* Adicione uma transição suave */
+    }
+    
+    /* Quando a nav-vertical estiver expandida, ajuste a margem esquerda para acomodar a largura expandida */
+    .nav-vertical:hover + .tela {
+        margin-left: 250px; /* Largura expandida da nav-vertical */
+    }
+    
+
+    .tela {
+        display: flex;
+        flex-wrap: wrap; /* Permite que os elementos se ajustem em telas menores */
+        justify-content: space-between; /* Espaçamento entre tela1 e tela2 */
+        align-items: flex-start; /* Alinhe os elementos verticalmente no início */
+    }
+    
+    .tela1 {
+        width: calc(65% - 10px); /* 65% da largura - 10px de espaço à esquerda */
+        padding-left: 10px; /* Espaço à esquerda */
+    }
+    
+    .tela2 {
+        width: calc(35% - 10px); /* 35% da largura - 10px de espaço à esquerda */
+        padding-left: 10px; /* Espaço à esquerda */
+    }
+    
+    .clientes,
+    .filtrar {
+        width: 100%; /* Tamanho total em telas pequenas */
+        margin-bottom: 20px; /* Espaçamento inferior entre elementos */
+    }
+    
+    .testimonial-box {
+        width: 100%; /* Tamanho total em telas pequenas */
+    }
+    
+    .testimonial-box1 {
+        width: 100%; /* Tamanho total em telas pequenas */
+    }
+    
+}
+
