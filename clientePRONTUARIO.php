@@ -7,42 +7,98 @@ if ($conexao->connect_error) {
     die("Erro na conexão: " . $conexao->connect_error);
 }
 
-// Consulta SQL para buscar os dados
-$sql = "SELECT nome, genero, data_consulta FROM prontuário";
-$resultado = $conexao->query($sql);
+$showPopup = false; // Variável para controlar a exibição do pop-up
 
-// Loop para exibir os dados
-while ($linha = $resultado->fetch_assoc()) {
-    echo '<div class="testimonial-box">';
-    echo '<div class="box-top">';
-    echo '<div class="profile">';
-    echo '<div class="profile-img">';
+if (isset($_POST['search_name'])) {
+    $search_name = $_POST['search_name'];
+
+    // Consulta SQL para buscar os registros com o nome pesquisado
+    $sql = "SELECT nome, genero, data_consulta FROM prontuário WHERE nome = '%$search_name%'";
     
-    // Lógica para definir a imagem com base no gênero
-    if ($linha['genero'] === 'masculino') {
-        $imagemGenero = 'man.png'; // Imagem masculina
-    } else if ($linha['genero'] === 'feminino') {
-        $imagemGenero = 'woman.png'; // Imagem feminina
+    $resultado = $conexao->query($sql);
+    
+    if ($resultado->num_rows > 0) {
+        // Exibir os resultados da pesquisa
+        while ($linha = $resultado->fetch_assoc()) {
+            echo '<div class="testimonial-box">';
+            echo '<div class="box-top">';
+            echo '<div class="profile">';
+            echo '<div class="profile-img">';
+            
+            // Lógica para definir a imagem com base no gênero
+            if ($linha['genero'] === 'masculino') {
+                $imagemGenero = 'man.png'; // Imagem masculina
+            } else if ($linha['genero'] === 'feminino') {
+                $imagemGenero = 'woman.png'; // Imagem feminina
+            } else {
+                $imagemGenero = 'padrao.jpg'; // Imagem padrão para outros valores de gênero
+            }
+            
+            echo '<img src="' . $imagemGenero . '" alt="' . $linha['nome'] . '">';
+            
+            echo '</div>';
+            echo '<div class="name-user">';
+            echo '<strong>' . $linha['nome'] . '</strong>';
+            echo '<span>' . $linha['genero'] . '</span>';
+            
+            // Converter e formatar a data
+            $data_consulta_formatada = date('d/m/Y', strtotime($linha['data_consulta']));
+            
+            echo '<p>Última consulta: ' . $data_consulta_formatada . '</p>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+        }
     } else {
-        $imagemGenero = 'padrao.jpg'; // Imagem padrão para outros valores de gênero
+        $showPopup = true; // Nenhum usuário encontrado, mostrar pop-up
     }
+} else {
+    // Consulta SQL para buscar todos os registros
+    $sql = "SELECT nome, genero, data_consulta FROM prontuário";
+    $resultado = $conexao->query($sql);
     
-    echo '<img src="' . $imagemGenero . '" alt="' . $linha['nome'] . '">';
-    
-    echo '</div>';
-    echo '<div class="name-user">';
-    echo '<strong>' . $linha['nome'] . '</strong>';
-    echo '<span>' . $linha['genero'] . '</span>';
-    
-    // Converter e formatar a data
-    $data_consulta_formatada = date('d/m/Y', strtotime($linha['data_consulta']));
-    
-    echo '<p>Última consulta: ' . $data_consulta_formatada . '</p>';
-    echo '</div>';
-    echo '</div>';
-    echo '</div>';
-    echo '</div>';
+    // Exibir todos os resultados
+    while ($linha = $resultado->fetch_assoc()) {
+        echo '<div class="testimonial-box">';
+        echo '<div class="box-top">';
+        echo '<div class="profile">';
+        echo '<div class="profile-img">';
+        
+        // Lógica para definir a imagem com base no gênero
+        if ($linha['genero'] === 'masculino') {
+            $imagemGenero = 'man.png'; // Imagem masculina
+        } else if ($linha['genero'] === 'feminino') {
+            $imagemGenero = 'woman.png'; // Imagem feminina
+        } else {
+            $imagemGenero = 'padrao.jpg'; // Imagem padrão para outros valores de gênero
+        }
+        
+        echo '<img src="' . $imagemGenero . '" alt="' . $linha['nome'] . '">';
+        
+        echo '</div>';
+        echo '<div class="name-user">';
+        echo '<strong>' . $linha['nome'] . '</strong>';
+        echo '<span>' . $linha['genero'] . '</span>';
+        
+        // Converter e formatar a data
+        $data_consulta_formatada = date('d/m/Y', strtotime($linha['data_consulta']));
+        
+        echo '<p>Última consulta: ' . $data_consulta_formatada . '</p>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+    }
 }
 
 // Feche a conexão com o banco de dados
 $conexao->close();
+
+// Se a variável $showPopup for verdadeira, exibe o pop-up
+if ($showPopup) {
+    echo '<script>';
+    echo 'alert("Não foi possível encontrar este cliente.");';
+    echo '</script>';
+}
+?>
